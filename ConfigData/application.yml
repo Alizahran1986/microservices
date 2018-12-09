@@ -4,6 +4,10 @@ eureka:
     service-url:
       defaultZone: http://localhost:8010/eureka/
       #http://eureka-secondary:8012/eureka/,http://eureka-tertiary:8013/eureka/,http://eureka-primary:8011/eureka/
+# Allow Eureka to recognize two apps of the same type 
+# on the same host as separate instances (see bonus step):
+  instance:
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
 ---
 spring:
   profiles: subject
@@ -28,3 +32,10 @@ words: reasonable,leaky,suspicious,ordinary,unlikely
 spring:
   profiles: noun
 words: boat,book,vote,seat,backpack,partition,groundhog
+
+---
+spring:
+  profiles: cold-noun
+  application:
+    name: noun
+words: icicle,refrigerator,blizzard,snowball
