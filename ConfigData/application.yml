@@ -38,8 +38,6 @@ server:
 ---
 spring:
   profiles: cold-noun
-  application:
-    name: noun
 words: icicle,refrigerator,blizzard,snowball
 server:
   port: 8051
