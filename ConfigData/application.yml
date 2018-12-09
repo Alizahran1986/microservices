@@ -32,6 +32,8 @@ words: reasonable,leaky,suspicious,ordinary,unlikely
 spring:
   profiles: noun
 words: boat,book,vote,seat,backpack,partition,groundhog
+server:
+  port: 8050
 
 ---
 spring:
@@ -39,3 +41,5 @@ spring:
   application:
     name: noun
 words: icicle,refrigerator,blizzard,snowball
+server:
+  port: 8051
